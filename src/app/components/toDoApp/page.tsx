@@ -1,16 +1,22 @@
 'use client';
-import { useState } from "react";
+import { useEffect, useState } from "react";
 export default function ToDoApp() {
   const [title, setTitle] = useState<string>("");
   const [descrip, setDescrip] = useState<string>("");
   const [todos, setTodos] = useState<{ title: string, description: string }[]>([]);
   const [theme, setTheme] = useState<"White Theme" | "Black Theme">("Black Theme");
-  const height: number = window.innerHeight;
-  const width: number = window.innerWidth;
+  const [height,setHeight] = useState<number>(0);
+  const [width,setWidth]=  useState<number>(0);
   const twWidth: string = `w-[${width}px]`;
   const twheight: string = `h-[${height}px]`;
   const [color1, setColor1] = useState("black")// For Background Color 
   const [color2, setColor2] = useState("white");// For foreground Color
+  useEffect(()=>{
+    if(typeof window!=="undefined"){
+      setHeight(window.innerHeight);
+      setWidth(window.innerWidth);
+    }
+  },[]);
   const themeChanger = () => {
     if (theme === "White Theme") {
       setTheme("Black Theme");
