@@ -7,7 +7,6 @@ export default function ToDoApp() {
   const [theme, setTheme] = useState<"White Theme" | "Black Theme">("Black Theme");
   const height: number = window.innerHeight;
   const width: number = window.innerWidth;
-  type Colors = "white" | "black";
   const twWidth: string = `w-[${width}px]`;
   const twheight: string = `h-[${height}px]`;
   const [color1, setColor1] = useState("black")// For Background Color 
@@ -27,7 +26,7 @@ export default function ToDoApp() {
     }
   }
   function deleteButtonHandler(index: number): void {
-    let copyTodos: { title: string, description: string }[] = [...todos];
+    const copyTodos: { title: string, description: string }[] = [...todos];
     copyTodos.splice(index, 1);
     setTodos(copyTodos);
   }
@@ -64,8 +63,7 @@ export default function ToDoApp() {
       {showTodos}
     </div>;
   }
-  let themesContent: JSX.Element | undefined = undefined;
-  function FormsubmitHandler(e: any) {
+  function FormsubmitHandler(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     todos.push({ title: title, description: descrip });
     setTitle("");
