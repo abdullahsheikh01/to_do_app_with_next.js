@@ -5,7 +5,6 @@ This To-Do app allows users to manage their tasks efficiently with an intuitive 
 ## Features
 - **Dynamic Theme Switching**: Easily switch between Light and Dark themes with a single click.
 - **Task Management**: Add, view, and delete tasks with a smooth user experience.
-- **Responsive Design**: Optimized for various screen sizes, adapting layout dynamically.
 - **Figma Design**: Themes were initially designed in Figma to ensure a consistent and visually appealing UI.
 
 ## Figma Designs
@@ -39,11 +38,10 @@ Check out the [theme designs](https://www.figma.com/design/LmYJGRwUlBKHULKEp8gKy
 - **State Management**:
   - **Title and Description**: Stored using `useState` hooks to manage the input fields for each task.
   - **Tasks List**: Maintained as an array of objects (each with a title and description) in the `todos` state.
-  - **Theme State**: `theme` and color states (`color1` and `color2`) determine the Light or Dark theme and dynamically update the UI styles.
 
 - **Theme Toggle**:
   - Uses `themeChanger()` function to switch themes based on the current `theme` state.
-  - Updates colors for background and text by toggling between predefined values (`black` and `white`).
+  - Updates colors for background and text by toggling between predefined values (`Black Theme` and `White Theme`).
 
 - **Task Management**:
   - **Form Handler**: `FormsubmitHandler` function adds a new task to `todos` when the form is submitted.
@@ -51,11 +49,9 @@ Check out the [theme designs](https://www.figma.com/design/LmYJGRwUlBKHULKEp8gKy
 
 - **Dynamic Styling**:
   - Tailwind CSS classes are dynamically set based on state variables to adapt the UI to the selected theme and device size.
-  - `twWidth` and `twHeight` values use JavaScript to make the app responsive to screen dimensions.
 
 - **Conditional Rendering**:
   - The component conditionally renders tasks and adjusts layout based on the number of tasks (e.g., grid view for multiple tasks, centered message for empty list).
-
 - **Clear All Functionality**:
   - It delete all the todos.
 
